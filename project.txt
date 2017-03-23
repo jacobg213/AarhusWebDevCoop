@@ -1,0 +1,30 @@
+Github repository:
+https://github.com/makop90/AarhusWebDevCoop
+
+Back-office Users:
+
+Administrator User
+Username: administrator
+Password: administrator
+
+Editor User
+Username: editor
+Password: editor12
+
+Writer User
+Username: writer
+Password: writer12
+
+
+Website Users:
+
+Full member (Active)
+Username: active1 
+Password: active12 
+
+Guest member(Guest)
+Username: guest1
+Password: guest123
+
+
+
