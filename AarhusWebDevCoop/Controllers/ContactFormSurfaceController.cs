@@ -26,19 +26,18 @@ namespace AarhusWebDevCoop.Controllers
             message.Subject = model.Subject;
             message.From = new MailAddress(model.Email, model.Name);
             message.Body = model.Message;
-            //using (SmtpClient smtp = new SmtpClient())
-            //{
-            //    smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
-            //    smtp.UseDefaultCredentials = false;
-            //    smtp.EnableSsl = true;
-            //    smtp.Host = "smtp.gmail.com";
-            //    smtp.Port = 587;
-            //    smtp.Credentials = new System.Net.NetworkCredential("username@gmail.com", "password");
-            //    smtp.EnableSsl = true;
-            //    // send mail
-            //    smtp.Send(message);
-            //    TempData["success"] = true;
-            //}
+            using (SmtpClient smtp = new SmtpClient())
+            {
+                smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+                smtp.UseDefaultCredentials = false;
+                smtp.EnableSsl = true;
+                smtp.Host = "smtp.gmail.com";
+                smtp.Port = 587;
+                smtp.Credentials = new System.Net.NetworkCredential("umbracotestmail@gmail.com", "umbracotestmail1");
+                smtp.EnableSsl = true;
+                // send mail
+                smtp.Send(message);
+            }
 
             IContent formMessage = Services.ContentService.CreateContent(model.Subject, CurrentPage.Id, "message");
             formMessage.SetValue("messageName", model.Name);
